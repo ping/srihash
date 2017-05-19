@@ -1,5 +1,5 @@
 
-# Source: https://gist.github.com/ping/srihash/
+# Source: https://github.com/ping/srihash/
 # Usage:
 #   srihash 'https://url/to/a.css'
 #   srihash 'https://url/to/a.css' 'https://url/to/another.js'

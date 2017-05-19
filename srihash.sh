@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Simple bash script that generates the Subresource Integrity (SRI) hash for a remote resource
-# Source: https://gist.github.com/ping/srihash/
+# Source: https://github.com/ping/srihash/
 #
 # Usage:
 #   ./srihash.sh 'https://url/to/a.css'
