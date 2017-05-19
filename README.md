@@ -8,7 +8,7 @@ Not much of an install. Use either the bash function or script version.
 Add the ``srihash`` function to ``~/.bash_profile``
 
 ```bash
-curl -sL 'hhttps://raw.githubusercontent.com/ping/srihash/master/srihash' >> ~/.bash_profile \
+curl -sL 'https://raw.githubusercontent.com/ping/srihash/master/srihash' >> ~/.bash_profile \
 && source ~/.bash_profile
 ```
 
