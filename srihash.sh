@@ -23,6 +23,7 @@ green=`tput setaf 2`
 blue=`tput setaf 4`
 reset=`tput sgr0`
 
+allhtmlsrc=''
 for f in "$@"
 do
     if [ "${f:0:3}" = 'sha' ]; then
@@ -41,12 +42,21 @@ do
             if [[ "$f" == *'.js' ]]; then
                 htmlsrc="<script src=\"$f\"\n integrity=\"$hshval\"\n crossorigin=\"anonymous\"></script>"
                 echo -e "$htmlsrc"
-                echo -e -n "$htmlsrc" | pbcopy
+                if [ -n "$allhtmlsrc" ]; then
+                    allhtmlsrc="$allhtmlsrc\n"
+                fi
+                allhtmlsrc="$allhtmlsrc$htmlsrc"
             elif [[ "$f" == *'.css' ]]; then
                 htmlsrc="<link rel=\"stylesheet\" href=\"$f\"\n integrity=\"$hshval\"\n crossorigin=\"anonymous\">"
                 echo -e "$htmlsrc"
-                echo -e -n "$htmlsrc" | pbcopy
+                if [ -n "$allhtmlsrc" ]; then
+                    allhtmlsrc="$allhtmlsrc\n"
+                fi
+                allhtmlsrc="$allhtmlsrc$htmlsrc"
             fi
         fi
     done
 done
+if [ -n "$allhtmlsrc" ]; then
+    echo -e -n "$allhtmlsrc" | pbcopy
+fi
