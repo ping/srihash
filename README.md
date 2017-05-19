@@ -4,6 +4,8 @@ bash function/script to generate an SRI hash for a remote resource
 ## Install
 Not much of an install. Use either the bash function or script version.
 
+Requires ``openssl``.
+
 ### 1. bash function
 Add the ``srihash`` function to ``~/.bash_profile``
 
